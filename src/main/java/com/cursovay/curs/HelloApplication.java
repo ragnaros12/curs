@@ -1,21 +1,17 @@
 package com.cursovay.curs;
 
-import com.cursovay.curs.core.Dao;
 import com.cursovay.curs.core.DaoManager;
 import com.cursovay.curs.core.daos.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 public class HelloApplication extends Application {
     static Connection sqlServer;
-
     @Override
     public void start(Stage stage) throws IOException, ClassNotFoundException, SQLException {
 

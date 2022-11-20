@@ -26,7 +26,7 @@ public class EmployeeDao extends Dao<Employee> {
     @Override
     public void onCreate() {
         try{
-            connection.prepareStatement("create table Sotrudniki(Id_sotr serial PRIMARY KEY, Id_grajd integer NOT NULL,FOREIGN KEY (Id_grajd) REFERENCES Grajdanstvo (Id_grajd),Familia varchar,Imya varchar,otchecstvo varchar, Data_rojd Date,Mesto_rojd varchar(200), passport varchar(11), Kem_vidan varchar(50),Data_vidachi Date,Adres varchar(200),Sem_pol varchar(50),Strah_svid varchar(15),inn varchar(15),kpp varchar(50),tel varchar(30));").execute();
+            connection.prepareStatement("create table Sotrudniki(Id_sotr serial PRIMARY KEY, Id_grajd integer NOT NULL,FOREIGN KEY (Id_grajd) REFERENCES Grajdanstvo (Id_grajd)  ON DELETE CASCADE,Familia varchar,Imya varchar,otchecstvo varchar, Data_rojd Date,Mesto_rojd varchar(200), passport varchar(11), Kem_vidan varchar(50),Data_vidachi Date,Adres varchar(200),Sem_pol varchar(50),Strah_svid varchar(15),inn varchar(15),kpp varchar(50),tel varchar(30));").execute();
         }
         catch (Exception e){}
     }

@@ -21,7 +21,6 @@ import java.util.ResourceBundle;
 
 public class AddContract implements Initializable {
 
-
     public TextField number;
     public TextField Srok;
     public TextField Oklad;

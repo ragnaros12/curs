@@ -25,8 +25,8 @@ public class ContractDao extends Dao<Contract> {
     public void onCreate() {
         try{
             connection.prepareStatement
-                    ("create table Dogover(id serial PRIMARY KEY, Nomer_do varchar, Id_dolj integer NOT NULL, FOREIGN KEY (Id_dolj) REFERENCES Doljnost (Id_dolj), Id_sotr integer NOT NULL, FOREIGN KEY (Id_sotr) REFERENCES Sotrudniki (Id_sotr), Id_vid_dog integer," +
-                            " FOREIGN KEY (Id_vid_dog) REFERENCES Vid_dog (Id_vid_dog), data_zakl Date, Srok integer, Data_rast DATE, oklad integer, Trud_dog bool, stavka real, Rast_reason varchar(200));").execute();
+                    ("create table Dogover(id serial PRIMARY KEY, Nomer_do varchar, Id_dolj integer NOT NULL, FOREIGN KEY (Id_dolj) REFERENCES Doljnost (Id_dolj)  ON DELETE CASCADE, Id_sotr integer NOT NULL, FOREIGN KEY (Id_sotr) REFERENCES Sotrudniki (Id_sotr)  ON DELETE CASCADE, Id_vid_dog integer," +
+                            " FOREIGN KEY (Id_vid_dog) REFERENCES Vid_dog (Id_vid_dog)  ON DELETE CASCADE, data_zakl Date, Srok integer, Data_rast DATE, oklad integer, Trud_dog bool, stavka real, Rast_reason varchar(200));").execute();
         }
         catch (Exception e){}
     }

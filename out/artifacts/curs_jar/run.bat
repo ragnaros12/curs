@@ -1,0 +1,1 @@
+java -jar ./curs.jar --module-path "C:\Users\khlop\Desktop\javafx-sdk-19\lib" --add-modules javafx.controls,javafx.fxml
