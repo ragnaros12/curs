@@ -15,8 +15,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException, ClassNotFoundException, SQLException {
 
-        sqlServer = DriverManager.getConnection("jdbc:postgresql://localhost:5432/xxxx", "postgres", "root");
-        DaoManager.getInstance().addDao(new NationalityDao(sqlServer));
+        sqlServer = DriverManager.getConnection("jdbc:postgresql://localhost:5432/aslkbkd", "postgres", "root");
         DaoManager.getInstance().addDao(new TypeContractDao(sqlServer));
         DaoManager.getInstance().addDao(new KindContractDao(sqlServer));
         DaoManager.getInstance().addDao(new DivisionDao(sqlServer));

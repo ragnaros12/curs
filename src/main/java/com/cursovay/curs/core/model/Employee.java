@@ -4,11 +4,11 @@ import java.sql.Date;
 
 public class Employee {
     private int id;
-    private Nationality nationality;
-    private String firstName, secondName, lastName,passport,whoGet,address,Family, insuranceСertificate,inn, kpp,phone,locationBirthDay;
+    private String nationality;
+    private String firstName, secondName, lastName,passport,whoGet,address,Family, insuranceСertificate, kpp,phone,locationBirthDay;
     private Date birthDay, dateIssue;
 
-    public Employee(int id, Nationality nationality, String firstName, String secondName, String lastName, String passport, String whoGet, String address, String family, String insuranceСertificate, String inn, String kpp, String phone, String locationBirthDay, Date birthDay, Date dateIssue) {
+    public Employee(int id, String nationality, String firstName, String secondName, String lastName, String passport, String whoGet, String address, String family, String insuranceСertificate, String kpp, String phone, String locationBirthDay, Date birthDay, Date dateIssue) {
         this.id = id;
         this.nationality = nationality;
         this.firstName = firstName;
@@ -19,12 +19,19 @@ public class Employee {
         this.address = address;
         Family = family;
         this.insuranceСertificate = insuranceСertificate;
-        this.inn = inn;
         this.kpp = kpp;
         this.phone = phone;
         this.locationBirthDay = locationBirthDay;
         this.birthDay = birthDay;
         this.dateIssue = dateIssue;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     @Override
@@ -40,13 +47,6 @@ public class Employee {
         this.id = id;
     }
 
-    public Nationality getNationality() {
-        return nationality;
-    }
-
-    public void setNationality(Nationality nationality) {
-        this.nationality = nationality;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -110,13 +110,6 @@ public class Employee {
 
     public void setInsuranceСertificate(String insuranceСertificate) {
         this.insuranceСertificate = insuranceСertificate;
-    }
-    public String getInn() {
-        return inn;
-    }
-
-    public void setInn(String inn) {
-        this.inn = inn;
     }
     public String getKpp() {
         return kpp;

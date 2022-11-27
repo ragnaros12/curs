@@ -29,7 +29,6 @@
       <TableView fx:id="Table" minWidth="-Infinity" prefWidth="-Infinity" GridPane.columnSpan="3" GridPane.rowIndex="1">
          <columns>
             <TableColumn fx:id="idFio" prefWidth="200.0" text="Фио" />
-            <TableColumn fx:id="idInn" prefWidth="200.0" text="Инн" />
             <TableColumn fx:id="idKpp" prefWidth="200.0" text="Кпп" />
             <TableColumn fx:id="idPassport" prefWidth="200.0" text="Паспорт" />
             <TableColumn fx:id="idPhone" prefWidth="200.0" text="телефон" />

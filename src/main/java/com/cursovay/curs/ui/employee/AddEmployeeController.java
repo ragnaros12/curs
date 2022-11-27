@@ -2,7 +2,6 @@ package com.cursovay.curs.ui.employee;
 
 import com.cursovay.curs.core.DaoManager;
 import com.cursovay.curs.core.model.Employee;
-import com.cursovay.curs.core.model.Nationality;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,6 +10,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.sql.Date;
@@ -33,18 +33,16 @@ public class AddEmployeeController implements Initializable {
     public TextField birthPlace;
     public TextField certificate;
     public DatePicker birthDay;
-    public ComboBox<Nationality> nationality;
+    public TextField nationality;
 
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        nationality.setItems(FXCollections.observableList(DaoManager.getInstance().findDao(Nationality.class).getAll()));
-        nationality.getSelectionModel().select(0);
     }
     @FXML
     public void onAddClicked(MouseEvent event) {
         if(DaoManager.getInstance().findDao(Employee.class).Add(new Employee(
                 1,
-                nationality.getSelectionModel().getSelectedItem(),
+                nationality.getText(),
                 name.getText(),
                 secondName.getText(),
                 lastName.getText(),
@@ -53,7 +51,6 @@ public class AddEmployeeController implements Initializable {
                 address.getText(),
                 family.getText(),
                 certificate.getText(),
-                inn.getText(),
                 kpp.getText(),
                 phone.getText(),
                 birthPlace.getText(),

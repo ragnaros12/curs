@@ -24,7 +24,6 @@ import java.util.ResourceBundle;
 public class EmployeeController implements Initializable {
     public TableView<Employee> Table;
     public TableColumn<Employee, String> idFio;
-    public TableColumn<Employee, String> idInn;
     public TableColumn<Employee, String> idKpp;
     public TableColumn<Employee, String> idPassport;
     public TableColumn<Employee, String> idPhone;
@@ -35,11 +34,10 @@ public class EmployeeController implements Initializable {
 
         // устанавливаем тип и значение которое должно хранится в колонке
         idFio.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getFirstName() + " " + cell.getValue().getSecondName() + " " + cell.getValue().getLastName()));
-        idInn.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getInn()));
         idKpp.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getKpp()));
         idPassport.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getPassport() + " " + cell.getValue().getWhoGet() + " " + cell.getValue().getDateIssue().toString()));
         idPhone.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getPhone()));
-        idNationality.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getNationality().getFullNationality()));
+        idNationality.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getNationality()));
 
 
         // заполняем таблицу данными

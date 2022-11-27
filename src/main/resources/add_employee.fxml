@@ -58,11 +58,6 @@
          </GridPane.margin>
       </TextField>
       <DatePicker fx:id="dateIssue" promptText="Дата выдачи" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField fx:id="inn" promptText="Инн" GridPane.rowIndex="3">
-         <GridPane.margin>
-            <Insets left="10.0" right="10.0" />
-         </GridPane.margin>
-      </TextField>
       <TextField fx:id="kpp" promptText="Кпп" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets left="10.0" right="10.0" />
@@ -94,7 +89,7 @@
          </GridPane.margin>
       </TextField>
       <DatePicker fx:id="birthDay" promptText="Дата рождения" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-      <ComboBox fx:id="nationality" prefWidth="150.0" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+      <TextField fx:id="nationality" prefWidth="150.0" GridPane.columnSpan="2" GridPane.rowIndex="7" />
       <Button minWidth="-Infinity" onMouseClicked="#onAddClicked" mnemonicParsing="false" prefWidth="200.0" text="Создать" GridPane.columnSpan="2" GridPane.rowIndex="8" />
    </children>
 </GridPane>

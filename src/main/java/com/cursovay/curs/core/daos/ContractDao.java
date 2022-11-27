@@ -35,7 +35,7 @@ public class ContractDao extends Dao<Contract> {
     public List<Contract> getAll() {
         List<Contract> contracts = new ArrayList<>();
         try{
-            ResultSet set = connection.prepareStatement("select * from dogover INNER JOIN doljnost ON doljnost.id_dolj = dogover.id_dolj INNER JOIN sotrudniki ON sotrudniki.id_sotr = dogover.id_sotr INNER JOIN vid_dog ON vid_dog.id_vid_dog = dogover.id_vid_dog INNER JOIN tip_dog ON tip_dog.id_tip_dog = vid_dog.id_tip_dog INNER JOIN struct_p ON struct_p.id_struct_p = doljnost.id_struct_p INNER JOIN grajdanstvo ON grajdanstvo.id_grajd = sotrudniki.id_grajd").executeQuery();
+            ResultSet set = connection.prepareStatement("select * from dogover INNER JOIN doljnost ON doljnost.id_dolj = dogover.id_dolj INNER JOIN sotrudniki ON sotrudniki.id_sotr = dogover.id_sotr INNER JOIN vid_dog ON vid_dog.id_vid_dog = dogover.id_vid_dog INNER JOIN tip_dog ON tip_dog.id_tip_dog = vid_dog.id_tip_dog INNER JOIN struct_p ON struct_p.id_struct_p = doljnost.id_struct_p").executeQuery();
             while (set.next()){
                 contracts.add(new Contract(
                       set.getInt(set.findColumn("id")),
@@ -50,11 +50,7 @@ public class ContractDao extends Dao<Contract> {
                         ),
                         new Employee(
                                 set.getInt(set.findColumn("id_sotr")),
-                                new Nationality(
-                                        set.getInt(set.findColumn("id_grajd")),
-                                        set.getString(set.findColumn("grajd_sokr")),
-                                        set.getString(set.findColumn("grajd_poln"))
-                                ),
+                                set.getString(set.findColumn("id_grajd")),
                                 set.getString(set.findColumn("imya")),
                                 set.getString(set.findColumn("familia")),
                                 set.getString(set.findColumn("otchecstvo")),
@@ -63,7 +59,6 @@ public class ContractDao extends Dao<Contract> {
                                 set.getString(set.findColumn("Adres")),
                                 set.getString(set.findColumn("Sem_pol")),
                                 set.getString(set.findColumn("Strah_svid")),
-                                set.getString(set.findColumn("inn")),
                                 set.getString(set.findColumn("kpp")),
                                 set.getString(set.findColumn("tel")),
                                 set.getString(set.findColumn("Mesto_rojd")),
